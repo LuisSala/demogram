@@ -1,12 +1,70 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="assets/bpm_styles.css" type="text/css" media="screen" charset="utf-8" />
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]--> <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]--> <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]--> <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>demogram</title>
-  </head>
-  <body>
-    <h1>Hello World</h1>
-  </body>
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <script type="text/javascript" src="assets/bpm_libs.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="app/resources/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/bpm_styles.css">
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+</head>
+<body class="container">
+	  <script type="text/html">
+
+	  {{#collection contentBinding="App.mediaController" class="dashboard" itemClass="dashboard-item"}}
+		{{#view App.MediaItemView content=content}}
+	      <img class="dashboard-photo" {{bindAttr src="parentView.content.images.low_resolution.url"}}>
+
+	      <div class="dashboard-details">
+	        <img class="dashboard-profile-picture" {{bindAttr src="content.user.profile_picture"}}>
+	          <div class="dashboard-profile-username">{{content.user.username}}</div>
+	      </div>
+		{{/view}}
+	  {{/collection}}
+
+	  </script>
+
+	<script type="text/html" data-template-name="photo-details">
+
+		{{#view App.PinchableView class="photo-details-image-container" content=content}}
+		<img class="photo-details-image" {{bindAttr src="content.images.standard_resolution.url"}}>
+		{{/view}}
+
+		<div class="photo-details-data">
+			<div class="photo-details-user">
+				<img class="photo-details-user-profile-picture" {{bindAttr src="content.caption.from.profile_picture"}}>
+		      <div class="photo-details-user-profile-username">{{content.user.username}}</div>
+          </div>
+
+          {{#collection contentBinding="App.mediaController.comments" class="photo-details-comments" itemClass="photo-details-comment-item"}}
+              <strong>{{content.from.username}}:</strong> {{content.text}}
+          {{/collection}}
+
+          {{#view App.CloseDetailsButton}}
+            Close
+          {{/view}}
+      </div>
+  </script>
+
+</body>
+
+<script src="assets/bpm_libs.js"></script>
+<script type="text/javascript">
+  spade.ready(function() {
+    spade.require('demogram');
+  });
+</script>
+
 </html>

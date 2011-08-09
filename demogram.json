@@ -5,8 +5,7 @@
     "bpm_libs.js": {
       "directories": [
         "lib"
-      ]/*,
-      "minifier": "uglify-js"*/
+      ]
     },
     "bpm_styles.css": {
       "directories": [
@@ -16,6 +15,7 @@
   },
   "dependencies": {
     "sproutcore": ">= 0-pre",
-    "sproutcore-touch": ">= 0"
+    "sproutcore-touch": ">= 0",
+    "spade": ">= 0"
   }
 }

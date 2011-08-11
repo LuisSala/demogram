@@ -1,0 +1,3 @@
+[submodule "packages/sproutcore-statechart"]
+	path = packages/sproutcore-statechart
+	url = https://github.com/sproutcore/sproutcore-statechart.git

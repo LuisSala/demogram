@@ -21,7 +21,18 @@
   
 </head>
 <body class="container">
-	  <script type="text/html">
+
+	  <script type="text/html" data-template-name="home">
+
+	  {{#view class="home-view"}}
+        {{#view SC.Button target="App.homeViewDelegate" action="showPhotoGrid"}}TEST{{/view}}
+        {{#view SC.Button}}TEST{{/view}}
+        {{#view SC.Button}}TEST{{/view}}
+      {{/view}}
+
+	  </script>
+
+	  <script type="text/html" data-template-name="photo-grid">
 
 	  {{#collection contentBinding="App.mediaController" class="dashboard" itemClass="dashboard-item"}}
 		{{#view App.MediaItemView content=content}}

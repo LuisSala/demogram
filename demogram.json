@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "sproutcore": ">= 0-pre",
-    "sproutcore-touch": ">= 0",
-    "spade": ">= 0"
+    "sproutcore-touch": ">= 0-pre",
+    "spade": ">= 0-pre",
+    "sproutcore-datastore": ">= 0-pre",
+    "sproutcore-statechart": ">= 0-pre"
   }
 }

@@ -89,6 +89,30 @@ body {
     background-color: #000;
 }
 
+.nav {
+    position: fixed;
+    top: 0;
+    height: 20px;
+    width: 100%;
+    background-color: #ddd;
+
+}
+
+.nav-title{
+    text-align: center;
+}
+
+.nav-settings-button {
+    float: right;
+}
+
+.nav-black-button {
+}
+
+.home {
+    margin-top: 30px;
+}
+
 .dashboard-item {
     background-color: #656565;
     float:left;

@@ -1,0 +1,18 @@
+{
+  "name": "sproutcore-ui",
+  "summary": "SproutCore UI",
+  "description": "The SproutCore UI Layer",
+  "homepage": "http://sproutcore.com",
+  "author": "Majd Taby",
+  "version": "2.0",
+
+  "dependencies": {
+    "spade": ">= 0",
+    "shifty": "~> 0.2",
+    "sproutcore": "2.0.beta.3"
+  },
+  "directories": {
+    "lib"       : "./lib",
+    "tests"     : "./tests"
+  }
+}

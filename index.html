@@ -21,21 +21,24 @@
   
 </head>
 <body class="container">
-
+      <!-- NAVIGATION BAR-->
       <script type="text/html" data-template-name="navigation">
             {{#view SC.Button class="nav-back-button" target="App.navigationController" action="goBack"}}&lt;{{/view}}
             <span class="nav-title">{{controller.title}}</span>
             {{#view SC.Button class="nav-settings-button" target="App.navigationController" action="openSettings"}}Settings{{/view}}
       </script>
 
+
+      <!-- HOME SCREEN -->
 	  <script type="text/html" data-template-name="home">
 
-        {{#view SC.Button target="App.homeViewDelegate" action="showPhotoGrid"}}POPULAR{{/view}}<br/>
-        {{#view SC.Button}}TEST{{/view}}<br/>
-        {{#view SC.Button}}TEST{{/view}}
-
+        {{#view SC.Button class="home-button-standard" target="App.homeViewDelegate" action="showPhotoGrid"}}POPULAR{{/view}}<br/>
+        {{#view SC.Button class="home-button-standard" }}MY PHOTO FEED{{/view}}<br/>
+        {{#view SC.Button class="home-button-standard" }}NEARBY{{/view}}<br/>
+        {{view SC.TextField class="home-search-field" valueBinding="App.homeViewDelegate.searchQuery"}}{{#view  SC.Button class="home-button-search"}}GO{{/view}}<br/>
 	  </script>
 
+      <!-- PHOTO GRID -->
 	  <script type="text/html" data-template-name="photo-grid">
 
 	  {{#collection contentBinding="App.mediaController" class="dashboard" itemClass="dashboard-item"}}
@@ -51,27 +54,40 @@
 
 	  </script>
 
-	<script type="text/html" data-template-name="photo-details">
+      <!-- PHOTO DETAILS -->
 
-		{{#view App.PinchableView class="photo-details-image-container" content=content}}
-		<img class="photo-details-image" {{bindAttr src="content.images.standard_resolution.url"}}>
-		{{/view}}
+      <script type="text/html" data-template-name="photo-details">
 
-		<div class="photo-details-data">
-			<div class="photo-details-user">
-				<img class="photo-details-user-profile-picture" {{bindAttr src="content.caption.from.profile_picture"}}>
-		      <div class="photo-details-user-profile-username">{{content.user.username}}</div>
+          <div class="photo-details-user">
+            <span><img class="photo-details-user-profile-picture" {{bindAttr src="content.caption.from.profile_picture"}}></span>
+            <span class="photo-details-user-profile-username">{{content.user.username}}</span>
           </div>
 
-          {{#collection contentBinding="App.mediaController.comments" class="photo-details-comments" itemClass="photo-details-comment-item"}}
-              <strong>{{content.from.username}}:</strong> {{content.text}}
-          {{/collection}}
 
-          {{#view App.CloseDetailsButton}}
-            Close
-          {{/view}}
-      </div>
-  </script>
+          <img class="photo-details-image" {{bindAttr src="content.images.standard_resolution.url"}}>
+
+
+          <div class="photo-details-data">
+
+           <p>Tags:</p>
+            {{#collection contentBinding="content.tags" class="photo-details-tags" itemClass="photo-details-tag-item"}}
+                {{#view SC.Button class="button-green"}}{{parentView.content}}{{/view}}
+            {{/collection}}
+
+           <p>Likes:</p>
+
+            {{#collection contentBinding="content.likes.data" class="photo-details-likes" itemClass="photo-details-like-item"}}
+                {{#view SC.Button class="button-magenta"}} {{parentView.content.username}} {{/view}}
+            {{/collection}}
+
+           <p>Comments:</p>
+            {{#collection contentBinding="content.comments.data" class="photo-details-comments" itemClass="photo-details-comment-item"}}
+               <strong>{{content.from.username}}:</strong> {{content.text}}
+            {{/collection}}
+
+
+          </div>
+      </script>
 
 </body>
 

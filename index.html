@@ -8,8 +8,8 @@
   <title></title>
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name = "viewport" content = "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, target-densityDpi=device-dpi">
 
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="app/resources/apple-touch-icon.png">
@@ -18,7 +18,15 @@
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  
+  <script>
+    window.addEventListener("load",function() {
+      // Set a timeout...
+      setTimeout(function(){
+        // Hide the address bar!
+        window.scrollTo(0, 1);
+      }, 0);
+    });
+  </script>
 </head>
 <body class="container">
       <!-- NAVIGATION BAR-->
@@ -32,9 +40,9 @@
       <!-- HOME SCREEN -->
 	  <script type="text/html" data-template-name="home">
 
-        {{#view SC.Button class="home-button-standard" target="App.homeViewDelegate" action="showPhotoGrid"}}POPULAR{{/view}}<br/>
+        {{#view SC.Button class="home-button-standard" target="App.homeViewDelegate" action="showPopular"}}POPULAR{{/view}}<br/>
         {{#view SC.Button class="home-button-standard" }}MY PHOTO FEED{{/view}}<br/>
-        {{#view SC.Button class="home-button-standard" }}NEARBY{{/view}}<br/>
+        {{#view SC.Button class="home-button-standard" target="App.homeViewDelegate" action="showNearby"}}NEARBY{{/view}}<br/>
         {{view SC.TextField class="home-search-field" valueBinding="App.homeViewDelegate.searchQuery"}}{{#view  SC.Button class="home-button-search"}}GO{{/view}}<br/>
 	  </script>
 

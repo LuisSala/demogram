@@ -149,6 +149,10 @@ body {
 
 .home {
     @include main-content;
+    width: $home-widget-width + 15;
+    height: 380px;
+    margin-left: auto;
+    margin-right:auto;
 }
 
 .home-button-standard {

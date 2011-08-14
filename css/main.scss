@@ -77,16 +77,107 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 a, a:active, a:visited { color: #607890; }
 a:hover { color: #036; }
 
-/*
-    // ========================================== \\
-   ||                                              ||
-   ||               Application Styles             ||
-   ||                                              ||
-    \\ ========================================== //
-*/
+/* Custom Application Styles */
+
+$black: #000;
+$light-gray: #ddd;
+$green: #090;
+$magenta: #f4f;
+
+$nav-height: 40px;
+
+$home-widget-width: 300px;
+$home-widget-height: 50px;
+$home-widget-spacing: 8px;
+$home-search-button-width: 80px;
+
+$widget-font-size: 20px;
+
+$standard-widget-spacing: 8px;
 
 body {
-    background-color: #000;
+    background-color: $black;
+    color: $light-gray;
+}
+
+.button-magenta {
+    background-color: $magenta;
+    border-top-color: $magenta * 2;
+    border-left-color:$magenta * 2;
+    border-bottom-color: $magenta / 1.2;
+    border-right-color: $magenta / 1.2;
+
+}
+
+.button-green {
+    background-color: $green;
+    border-top-color: $green * 2;
+    border-left-color:$green * 2;
+    border-bottom-color: $green / 1.2;
+    border-right-color: $green / 1.2;
+}
+
+@mixin main-content {
+    margin-top: $nav-height+$home-widget-spacing;
+    background-color: $black;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    height: $nav-height;
+    width: 100%;
+    background-color: $light-gray;
+
+}
+
+.nav-title{
+    text-align: center;
+    font-size: $widget-font-size;
+}
+
+.nav-settings-button {
+    float: right;
+    height: $home-widget-height * .75;
+    font-size: $widget-font-size;
+}
+
+.nav-back-button {
+    height: $home-widget-height * .75;
+    font-size: $widget-font-size;
+}
+
+.home {
+    @include main-content;
+    width: $home-widget-width + 15;
+    height: 380px;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.home-button-standard {
+    width: $home-widget-width;
+    height: $home-widget-height;
+    margin-bottom: $home-widget-spacing;
+    font-size: $widget-font-size;
+}
+
+.home-button-search {
+    width: $home-widget-width * .2;
+    height: $home-widget-height;
+    margin-left:$home-widget-spacing;
+    font-size: $widget-font-size;
+}
+
+.home-search-field {
+    width: $home-widget-width * .75;
+    height: $home-widget-height - 6;
+    margin-bottom: 3px;
+    font-size: $widget-font-size;
+}
+
+.photo-grid {
+    @include main-content;
 }
 
 .dashboard-item {
@@ -123,29 +214,20 @@ body {
 }
 
 .photo-details {
-	position: absolute;
-	top: 10px;
-	bottom: 10px;
-	left: 10px;
-	right: 10px;
-	z-index: 999;
-	background-color: #ccc;
+    @include main-content;
 }
 
 .photo-details-image {
-	width: 95%;
-	height: auto;
+    width: 95%;
+    height: auto;
+
 }
 
 .photo-details-data {
-	float: right;
-	width: 50%;
-	margin-top:2%;
-	margin-right: 2%;
+
 }
 
 .photo-details-user {
-	margin-top: 10px;
 }
 
 .photo-details-user-profile-picture {
@@ -155,28 +237,38 @@ body {
 }
 
 .photo-details-user-profile-username {
-	float: left;
-	margin-top: 20px;
-	margin-left: 10px;
-	font-size: 30px;
+	color: $light-gray;
+    font-size: $widget-font-size;
 	font-weight: bold;
 
 }
 .photo-details-comments {
-	clear: both;
-	margin-top: 80px;
 }
 
 .photo-details-comment-item {
-	margin-top: 10px;
-	font-size: 18px;
+    color: $light-gray;
+}
+
+.photo-details-likes {
+
+}
+
+.photo-details-like-item {
+    margin-right: $standard-widget-spacing;
+    display: inline;
+}
+
+.photo-details-tags {
+
+}
+
+.photo-details-tag-item {
+    margin-right: $standard-widget-spacing;
+    display: inline;
 }
 
 .photo-details-image-container {
-	float:left;
-	width:45%;
-	margin-top: 2%;
-	margin-left: 2%;
+
 }
 
 .app-button {
@@ -243,13 +335,7 @@ body {
     height: auto;
   }
 
-  .photo-details-image-container {
-	width: 100%;
-  }
 
-  .photo-details-data {
-	display: none;
-  }
   /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
 }
 
@@ -261,13 +347,7 @@ body {
     height: auto;
   }
 
-  .photo-details-image-container {
-	width: 100%;
-  }
 
-  .photo-details-data {
-	display: none;
-  }
   /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
 }
 

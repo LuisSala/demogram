@@ -1,3 +1,5 @@
 .strobe
 .idea
 .bpm
+.sass-cache
+/packages/

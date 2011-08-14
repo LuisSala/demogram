@@ -43,7 +43,7 @@
         {{#view SC.Button class="home-button-standard" target="App.homeViewDelegate" action="showPopular"}}POPULAR{{/view}}<br/>
         {{#view SC.Button class="home-button-standard" }}MY PHOTO FEED{{/view}}<br/>
         {{#view SC.Button class="home-button-standard" target="App.homeViewDelegate" action="showNearby"}}NEARBY{{/view}}<br/>
-        {{view SC.TextField class="home-search-field" valueBinding="App.homeViewDelegate.searchQuery"}}{{#view  SC.Button class="home-button-search"}}GO{{/view}}<br/>
+        {{view SC.TextField class="home-search-field" placeholder="SEARCH" valueBinding="App.homeViewDelegate.searchQuery"}}{{#view  SC.Button class="home-button-search"}}GO{{/view}}<br/>
 	  </script>
 
       <!-- PHOTO GRID -->

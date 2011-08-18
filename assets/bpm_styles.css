@@ -187,33 +187,39 @@ a:hover {
   color: #036; }
 
 /* Custom Application Styles */
+/* Mocha background light text*/
 body {
-  background-color: black;
-  color: #dddddd; }
+  background-color: #f0ecdb;
+  color: #3d3d3d; }
 
-.button-magenta {
-  background-color: #ff44ff;
-  border-top-color: #ff88ff;
-  border-left-color: #ff88ff;
-  border-bottom-color: #d438d4;
-  border-right-color: #d438d4; }
+.shadow {
+  -moz-box-shadow: 0 0 8px 5px #3d3d3d;
+  -webkit-box-shadow: 0 0 8px 5px #3d3d3d; }
 
-.button-green {
-  background-color: #009900;
-  border-top-color: lime;
-  border-left-color: lime;
-  border-bottom-color: #007f00;
-  border-right-color: #007f00; }
+.button-tag {
+  background-color: #c96798;
+  border-top-color: #c96798;
+  border-left-color: #c96798;
+  border-bottom-color: #c96798;
+  border-right-color: #c96798; }
+
+.button-user {
+  background-color: #9fc256;
+  border-top-color: #9fc256;
+  border-left-color: #9fc256;
+  border-bottom-color: #9fc256;
+  border-right-color: #9fc256; }
 
 .nav {
   position: fixed;
   top: 0;
   height: 40px;
   width: 100%;
-  background-color: #dddddd; }
+  background-color: #a79567; }
 
 .nav-title {
   text-align: center;
+  font-family: Baskerville-BoldItalic;
   font-size: 20px; }
 
 .nav-settings-button {
@@ -227,8 +233,8 @@ body {
 
 .home {
   margin-top: 48px;
-  background-color: black;
   width: 315px;
+  height: 380px;
   margin-left: auto;
   margin-right: auto; }
 
@@ -236,13 +242,23 @@ body {
   width: 300px;
   height: 50px;
   margin-bottom: 8px;
-  font-size: 20px; }
+  font-size: 20px;
+  background-color: #d9ac0a;
+  border-top-color: #d9ac0a;
+  border-left-color: #d9ac0a;
+  border-bottom-color: #d9ac0a;
+  border-right-color: #d9ac0a; }
 
 .home-button-search {
   width: 60px;
   height: 50px;
   margin-left: 8px;
-  font-size: 20px; }
+  font-size: 20px;
+  background-color: #d9ac0a;
+  border-top-color: #d9ac0a;
+  border-left-color: #d9ac0a;
+  border-bottom-color: #d9ac0a;
+  border-right-color: #d9ac0a; }
 
 .home-search-field {
   width: 225px;
@@ -251,8 +267,7 @@ body {
   font-size: 20px; }
 
 .photo-grid {
-  margin-top: 48px;
-  background-color: black; }
+  margin-top: 48px; }
 
 .dashboard-item {
   background-color: #656565;
@@ -282,8 +297,7 @@ body {
   background-color: #ccc; }
 
 .photo-details {
-  margin-top: 48px;
-  background-color: black; }
+  margin-top: 48px; }
 
 .photo-details-image {
   width: 95%;
@@ -295,12 +309,16 @@ body {
   height: auto; }
 
 .photo-details-user-profile-username {
-  color: #dddddd;
+  color: #3d3d3d;
   font-size: 20px;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-left: 8px; }
+
+.photo-details-comments {
+  color: #3d3d3d; }
 
 .photo-details-comment-item {
-  color: #dddddd; }
+  color: #3d3d3d; }
 
 .photo-details-like-item {
   margin-right: 8px;
@@ -309,6 +327,9 @@ body {
 .photo-details-tag-item {
   margin-right: 8px;
   display: inline; }
+
+.user-details {
+  margin-top: 48px; }
 
 .app-button {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #f9f9f9), color-stop(34%, #dddddd), color-stop(67%, #f2f2f2), color-stop(100%, #f7f7f7));

@@ -33,7 +33,7 @@
       <script type="text/html" data-template-name="navigation">
             {{#view SC.Button class="nav-back-button" target="App.navigationController" action="goBack"}}&lt;{{/view}}
             <span class="nav-title">{{controller.title}}</span>
-            {{#view SC.Button class="nav-settings-button" target="App.navigationController" action="openSettings"}}Settings{{/view}}
+            {{#view SC.Button class="nav-settings-button" target="App.navigationController" action="openSettings"}}Login{{/view}}
       </script>
 
 
@@ -79,13 +79,15 @@
 
            <p>Tags:</p>
             {{#collection contentBinding="content.tags" class="photo-details-tags" itemClass="photo-details-tag-item"}}
-                {{#view SC.Button class="button-green"}}{{parentView.content}}{{/view}}
+                {{#view App.TagButton class="button-tag" value="itemView.content"}}{{itemView.content}}{{/view}}
             {{/collection}}
 
            <p>Likes:</p>
 
             {{#collection contentBinding="content.likes.data" class="photo-details-likes" itemClass="photo-details-like-item"}}
-                {{#view SC.Button class="button-magenta"}} {{parentView.content.username}} {{/view}}
+                {{#view App.UserButton class="button-user" target="App.userController" action="loadUser"}}
+                    {{itemView.content.username}}
+              {{/view}}
             {{/collection}}
 
            <p>Comments:</p>
@@ -96,6 +98,24 @@
 
           </div>
       </script>
+      <!-- USER DETAILS -->
+	  <script type="text/html" data-template-name="user-details">
+
+        {{#collection class="user-data" contentBinding="App.userController.content"}}
+            <img class="photo-details-user-profile-picture" {{bindAttr src="content.profile_picture"}}>
+            {{content.username}} <br/>
+            {{content.first_name}} {{content.last_name}} <br/>
+            {{content.bio}} - {{content.website}}<br/>
+            Followers: {{content.counts.followed_by}}<br/>
+            Likes: {{content.counts.likes}}<br/>
+            Follows: {{content.counts.follows}}
+        {{/collection}}
+        <hr/>
+
+	    {{view App.PhotoGridView}}
+
+	  </script>
+
 
 </body>
 

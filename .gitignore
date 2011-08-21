@@ -2,4 +2,5 @@
 .idea
 .bpm
 .sass-cache
+/lib/config.js
 /packages/

@@ -2,7 +2,9 @@
 
 ### Description:
 
-Simple Instagram client built with SproutCore 2.0 and the Browser Package Manager (BPM) tools.
+Full-featured Instagram client built with SproutCore 2.0 and the Browser Package Manager (BPM) tools.
+
+A simplified client can be found at: http://github.com/luissala/demogram-basic
 
 ### Features / Problems:
 Touch gesture support on iOS.
@@ -19,9 +21,9 @@ BPM - http://getbpm.org or http://sproutcutter.heroku.com
 
 ### Configure:
 
-Obtain a Client ID from http://instagram.com/developer and add the Client ID to app/main.js
+Obtain a Client ID from http://instagram.com/developer and add the Client ID to lib/core.js
 
-	App.INSTAGRAM_CLIENT_ID="CLIENT ID GOES HERE"
+	INSTAGRAM_CLIENT_ID="CLIENT ID GOES HERE"
 
 ### Run:	
 From your project directory run:

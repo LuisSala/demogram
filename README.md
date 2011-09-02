@@ -17,7 +17,10 @@ Touch gesture support on iOS.
 BPM - http://getbpm.org or http://sproutcutter.heroku.com
 
 	$ gem install bpm
-	
+
+Strobe - http://home.strobeapp.com
+
+    $ gem install strobe
 
 ### Configure:
 
@@ -26,8 +29,10 @@ Obtain a Client ID from http://instagram.com/developer then copy lib/config.samp
 	CONFIG.INSTAGRAM_CLIENT_ID="CLIENT ID GOES HERE"
 
 ### Run:	
+This app makes use of the Strobe proxy and Strobe Social Addon.
+
 From your project directory run:
 	
-	$ bpm preview
+	$ strobe preview
 	
-Open http://localhost:4020 in your browser.
+Open http://localhost:9292 in your browser.

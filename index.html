@@ -68,7 +68,9 @@
 
           <div class="photo-details-user">
             <span><img class="photo-details-user-profile-picture" {{bindAttr src="content.caption.from.profile_picture"}}></span>
-            <span class="photo-details-user-profile-username">{{content.user.username}}</span>
+                {{#view App.UserButton class="button-user" target="App.userController" userBinding="content.user" action="loadUser"}}
+                    {{user.username}}
+                {{/view}}
           </div>
 
 
@@ -85,8 +87,8 @@
            <p>Likes:</p>
 
             {{#collection contentBinding="content.likes.data" class="photo-details-likes" itemClass="photo-details-like-item"}}
-                {{#view App.UserButton class="button-user" target="App.userController" action="loadUser"}}
-                    {{itemView.content.username}}
+                {{#view App.UserButton class="button-user" target="App.userController" userBinding="content" action="loadUser"}}
+                    {{user.username}}
               {{/view}}
             {{/collection}}
 

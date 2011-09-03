@@ -125,21 +125,37 @@ body {
 -webkit-box-shadow: 0 0 8px 5px $gray_dark;
 }
 
-.button-tag {
-    background-color: $magenta;
-    border-top-color: $magenta;
-    border-left-color:$magenta;
-    border-bottom-color: $magenta;
-    border-right-color: $magenta;
+@mixin button-spacing {
+    margin-right:$standard-widget-spacing;
+    margin-bottom: $standard-widget-spacing;
+    /*padding: 7px 0 6px 0; */
+}
 
+@mixin button-styling {
+    font-size: $widget-font-size;
+    font-weight: normal;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 1px;
+    border-width: 0px;
+}
+
+.button-tag {
+    @include button-spacing;
+    @include button-styling;
+    background-color: $magenta;
+    color: $cream_light;
 }
 
 .button-user {
+    @include button-spacing;
+    @include button-styling;
     background-color: $green;
-    border-top-color: $green;
-    border-left-color:$green;
-    border-bottom-color: $green;
-    border-right-color: $green;
+    color: $cream_light;
 }
 
 @mixin main-content {
@@ -158,18 +174,27 @@ body {
 .nav-title{
     text-align: center;
     font-family: Baskerville-BoldItalic;
-    font-size: $widget-font-size;
+    font-size: $widget-font-size+10;
+    margin-left: 30%;
 }
 
 .nav-settings-button {
+    @include button-styling;
     float: right;
     height: $home-widget-height * .75;
     font-size: $widget-font-size;
+    background-color: $mocha;
+    color: $cream_light;
+    margin-top: 1px;
+    margin-bottom: 8px;
+    margin-right:4px;
 }
 
 .nav-back-button {
+    @include button-styling;
     height: $home-widget-height * .75;
-    font-size: $widget-font-size;
+    font-size: $widget-font-size+14;
+    background-color: $tan;
 
 }
 
@@ -182,27 +207,25 @@ body {
 }
 
 .home-button-standard {
+    @include button-spacing;
+    @include button-styling;
     width: $home-widget-width;
     height: $home-widget-height;
     margin-bottom: $home-widget-spacing;
     font-size: $widget-font-size;
-    background-color: $orange;
-    border-top-color: $orange;
-    border-left-color: $orange;
-    border-bottom-color: $orange;
-    border-right-color: $orange;
+    color: $cream_dark;
+    background-color: $mocha;
 }
 
 .home-button-search {
+    @include button-spacing;
+    @include button-styling;
     width: $home-widget-width * .2;
     height: $home-widget-height;
     margin-left:$home-widget-spacing;
     font-size: $widget-font-size;
-    background-color: $orange;
-    border-top-color: $orange;
-    border-left-color:$orange;
-    border-bottom-color: $orange;
-    border-right-color: $orange;
+    color: $cream_dark;
+    background-color: $mocha;
 }
 
 .home-search-field {

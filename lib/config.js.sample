@@ -1,4 +1,6 @@
 // Copy this file to <project_home>/lib/config.js and supply an Instagram client ID.
+// USE_OPTIMIZED_IMAGES makes use of Resize.WS an experimental image optimizer.
 return {
-	INSTAGRAM_CLIENT_ID: "SUPPLY_INSTAGRAM_CLIENT_ID_HERE";
+	INSTAGRAM_CLIENT_ID: "SUPPLY_INSTAGRAM_CLIENT_ID_HERE",
+	USE_OPTIMIZED_IMAGES: false
 }

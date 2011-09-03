@@ -238,7 +238,7 @@ h2 {
 .home-button-standard {
     @include button-spacing;
     @include button-styling;
-    width: $home-widget-width;
+    width: 100%;
     height: $home-widget-height;
     margin-bottom: $home-widget-spacing;
     font-size: $widget-font-size;
@@ -251,17 +251,19 @@ h2 {
     @include button-styling;
     width: $home-widget-width * .2;
     height: $home-widget-height;
-    margin-left:$home-widget-spacing;
     font-size: $widget-font-size;
     color: $cream_dark;
     background-color: $mocha;
+    float: right;
+    margin-right: 0;
 }
 
 .home-search-field {
-    width: $home-widget-width * .75;
+    width: $home-widget-width * .70;
     height: $home-widget-height - 6;
     margin-bottom: 3px;
     font-size: $widget-font-size;
+    float: left;
 }
 
 .photo-grid {

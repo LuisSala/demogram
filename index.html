@@ -51,7 +51,7 @@
 
 	  {{#collection contentBinding="App.mediaController" class="dashboard" itemClass="dashboard-item"}}
 		{{#view App.MediaItemView content=content}}
-	      <img class="dashboard-photo" {{bindAttr src="parentView.content.images.low_resolution.url"}}>
+	      <img class="dashboard-photo" {{bindAttr src="parentView.content.images.low_resolution.optimizedURL"}}>
 
 	      <div class="dashboard-details">
 	          <div class="dashboard-profile-username">{{content.user.username}}</div>
@@ -73,7 +73,7 @@
           </div>
 
 
-          <img class="photo-details-image" {{bindAttr src="content.images.standard_resolution.url"}}>
+          <img class="photo-details-image" {{bindAttr src="content.images.standard_resolution.optimizedURL"}}>
 
 
           <div class="photo-details-data">

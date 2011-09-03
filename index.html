@@ -54,7 +54,6 @@
 	      <img class="dashboard-photo" {{bindAttr src="parentView.content.images.low_resolution.url"}}>
 
 	      <div class="dashboard-details">
-	        <img class="dashboard-profile-picture" {{bindAttr src="content.user.profile_picture"}}>
 	          <div class="dashboard-profile-username">{{content.user.username}}</div>
 	      </div>
 		{{/view}}
@@ -68,7 +67,7 @@
 
           <div class="photo-details-user">
             <span><img class="photo-details-user-profile-picture" {{bindAttr src="content.caption.from.profile_picture"}}></span>
-                {{#view App.UserButton class="button-user" target="App.userController" userBinding="content.user" action="loadUser"}}
+                {{#view App.UserButton class="button-current-user" target="App.userController" userBinding="content.user" action="loadUser"}}
                     {{user.username}}
                 {{/view}}
           </div>
@@ -79,23 +78,30 @@
 
           <div class="photo-details-data">
 
-           <p>Tags:</p>
+           {{#if content.tags.length}}
+           <h2>Tags:</h2>
             {{#collection contentBinding="content.tags" class="photo-details-tags" itemClass="photo-details-tag-item"}}
                 {{#view App.TagButton class="button-tag" value="itemView.content"}}{{itemView.content}}{{/view}}
             {{/collection}}
+           {{/if}}
 
-           <p>Likes:</p>
+           {{#if content.likes.data.length}}
+           <h2>Likes:</h2>
+
 
             {{#collection contentBinding="content.likes.data" class="photo-details-likes" itemClass="photo-details-like-item"}}
                 {{#view App.UserButton class="button-user" target="App.userController" userBinding="content" action="loadUser"}}
                     {{user.username}}
               {{/view}}
             {{/collection}}
+           {{/if}}
 
-           <p>Comments:</p>
+           {{#if content.comments.data.length}}
+           <h2>Comments:</h2>
             {{#collection contentBinding="content.comments.data" class="photo-details-comments" itemClass="photo-details-comment-item"}}
                <strong>{{content.from.username}}:</strong> {{content.text}}
             {{/collection}}
+           {{/if}}
 
 
           </div>
@@ -117,7 +123,6 @@
 	    {{view App.PhotoGridView}}
 
 	  </script>
-
 
 </body>
 

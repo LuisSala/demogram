@@ -116,13 +116,11 @@ $widget-font-size: 20px;
 
 $standard-widget-spacing: 8px;
 
-body {
-    background-color: $cream_light;
-    color: $gray_dark;
-}
-.shadow {
--moz-box-shadow: 0 0 8px 5px $gray_dark;
--webkit-box-shadow: 0 0 8px 5px $gray_dark;
+@mixin shadowed-text {
+    font-size: $widget-font-size;
+    font-weight: normal;
+    text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 1px;
+
 }
 
 @mixin button-spacing {
@@ -132,16 +130,34 @@ body {
 }
 
 @mixin button-styling {
-    font-size: $widget-font-size;
-    font-weight: normal;
+    @include shadowed-text;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     -o-border-radius: 3px;
     -ms-border-radius: 3px;
     -khtml-border-radius: 3px;
     border-radius: 3px;
-    text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 1px;
     border-width: 0px;
+}
+
+body {
+    background-color: $cream_light;
+    color: $gray_dark;
+}
+
+h2 {
+    @include shadowed-text;
+    width: 100%;
+    background-color: $mocha;
+    color: $cream_light;
+    padding-left: $standard-widget-spacing;
+    margin-bottom: $standard-widget-spacing;
+
+}
+
+.shadow {
+-moz-box-shadow: 0 0 8px 5px $gray_dark;
+-webkit-box-shadow: 0 0 8px 5px $gray_dark;
 }
 
 .button-tag {
@@ -157,6 +173,15 @@ body {
     background-color: $green;
     color: $cream_light;
 }
+.button-current-user {
+    @include button-spacing;
+    @include button-styling;
+    background-color: $green;
+    color: $cream_light;
+    margin-left: $standard-widget-spacing;
+    margin-top: 10px;
+    font-size: $widget-font-size+20;
+}
 
 @mixin main-content {
     margin-top: $nav-height+$home-widget-spacing;
@@ -168,14 +193,18 @@ body {
     height: $nav-height;
     width: 100%;
     background-color: $tan;
-
 }
 
 .nav-title{
+    position:relative;
+    top: -7px;
     text-align: center;
     font-family: Baskerville-BoldItalic;
-    font-size: $widget-font-size+10;
-    margin-left: 30%;
+    font-size: $widget-font-size+18;
+    margin-left: 25%;
+    margin-right: auto;
+    text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 1px;
+    color: $cream_light;
 }
 
 .nav-settings-button {
@@ -239,8 +268,11 @@ body {
     @include main-content;
 }
 
+.dashboard {
+}
+
 .dashboard-item {
-    background-color: #656565;
+    background-color: $cream_dark;
     float:left;
     margin: 0 4px 4px 0;
 }
@@ -260,7 +292,10 @@ body {
 }
 
 .dashboard-profile-username {
-    color: #fff;
+    @include shadowed-text;
+    font-size: $widget-font-size - 6;
+    color: $mocha;
+    text-align: center;
 }
 
 .toolbar {
@@ -274,6 +309,7 @@ body {
 
 .photo-details {
     @include main-content;
+    margin-left:8px;
 }
 
 .photo-details-image {
@@ -293,15 +329,16 @@ body {
     width:60px;
 	float: left; 
     height:auto;
+    margin-bottom: $standard-widget-spacing;
+    margin-top: $standard-widget-spacing;
 }
 
 .photo-details-user-profile-username {
 	color: $gray_dark;
     font-size: $widget-font-size;
 	font-weight: bold;
-    margin-left: $standard-widget-spacing;
-
 }
+
 .photo-details-comments {
     color: $gray_dark;
 }

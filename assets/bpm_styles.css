@@ -240,6 +240,28 @@ h2 {
   background-color: #9fc256;
   color: #f0ecdb; }
 
+.button-tweet {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  /*padding: 7px 0 6px 0; */
+  font-size: 20px;
+  font-weight: normal;
+  text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 1px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  border-width: 0px;
+  background-color: #659ed3;
+  color: #f0ecdb;
+  margin-left: 8px;
+  margin-top: 13px;
+  font-size: 40px;
+  float: right;
+  margin-right: 40px; }
+
 .button-current-user {
   margin-right: 8px;
   margin-bottom: 8px;
@@ -439,6 +461,84 @@ h2 {
 
 .user-details {
   margin-top: 48px; }
+
+.tweet-dialog {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 998;
+  background-color: #000;
+  opacity: .7; }
+
+.tweet-block {
+  background-color: #c8d4d5;
+  position: fixed;
+  height: 300px;
+  top: 50px;
+  left: 50px;
+  right: 50px;
+  z-index: 999;
+  opacity: 1; }
+
+.tweet-text {
+  position: relative;
+  min-width: 90%;
+  min-height: 150px;
+  top: 30px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: block;
+  font-size: 20px;
+  color: #3d3d3d; }
+
+.tweet-button-bar {
+  position: absolute;
+  bottom: 10px;
+  width: 90%;
+  margin-left: 8px; }
+
+.tweet-submit-button {
+  font-size: 20px;
+  font-weight: normal;
+  text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 1px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  border-width: 0px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  /*padding: 7px 0 6px 0; */
+  background-color: #659ed3;
+  color: #fff;
+  font-size: 20px;
+  display: inline;
+  float: right; }
+
+.tweet-cancel-button {
+  font-size: 20px;
+  font-weight: normal;
+  text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 1px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  border-width: 0px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  /*padding: 7px 0 6px 0; */
+  background-color: #3d3d3d;
+  color: #fff;
+  font-size: 20px;
+  display: inline;
+  float: left; }
 
 .app-button {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #f9f9f9), color-stop(34%, #dddddd), color-stop(67%, #f2f2f2), color-stop(100%, #f7f7f7));

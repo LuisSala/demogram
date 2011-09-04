@@ -70,6 +70,7 @@
                 {{#view App.UserButton class="button-current-user" target="App.userController" userBinding="content.user" action="loadUser"}}
                     {{user.username}}
                 {{/view}}
+                {{#view SC.Button class="button-tweet" target="App.socialController" action="tweetPhoto" contentBinding="content"}}Tweet!{{/view}}
           </div>
 
 
@@ -123,6 +124,19 @@
 	    {{view App.PhotoGridView}}
 
 	  </script>
+
+      <script type="text/html" data-template-name="tweet-dialog">
+          <div class="tweet-dialog"><!--Leave Empty--></div>
+          <div class="tweet-block">
+          {{view SC.TextArea valueBinding="App.socialController.tweetText" class="tweet-text"}}
+
+          <div class="tweet-button-bar">
+          {{#view SC.Button class="tweet-cancel-button" target="App.socialController" action="cancel"}}Cancel{{/view}}
+          {{#view SC.Button class="tweet-submit-button" target="App.socialController" action="submit"}}Submit{{/view}}
+          </div>
+
+          </div>
+      </script>
 
 </body>
 

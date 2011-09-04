@@ -173,6 +173,19 @@ h2 {
     background-color: $green;
     color: $cream_light;
 }
+
+.button-tweet {
+    @include button-spacing;
+    @include button-styling;
+    background-color: $blue;
+    color: $cream_light;
+    margin-left: $standard-widget-spacing;
+    margin-top: 13px;
+    font-size: $widget-font-size+20;
+    float: right;
+    margin-right:40px;
+}
+
 .button-current-user {
     @include button-spacing;
     @include button-styling;
@@ -372,6 +385,70 @@ h2 {
 .user-details {
     @include main-content;
 }
+
+.tweet-dialog {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: 998;
+        background-color: #000;
+        opacity: .7;
+}
+
+.tweet-block {
+    background-color: $gray_blue;
+    position:fixed;
+    height: 300px;
+    top: 50px;
+    left:50px;
+    right: 50px;
+    z-index: 999;
+    opacity: 1;
+}
+
+.tweet-text {
+    position: relative;
+    min-width: 90%;
+    min-height: 150px;
+    top: 30px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: block;
+    font-size: $widget-font-size;
+    color: $gray_dark;
+}
+
+.tweet-button-bar {
+    position: absolute;
+    bottom: 10px;
+    width: 90%;
+    margin-left: $standard-widget-spacing;
+}
+
+.tweet-submit-button {
+    @include button-styling;
+    @include button-spacing;
+    background-color: $blue;
+    color: #fff;
+    font-size: $widget-font-size;
+    display: inline;
+    float: right;
+}
+
+.tweet-cancel-button {
+    @include button-styling;
+    @include button-spacing;
+    background-color: $gray_dark;
+    color: #fff;
+    font-size: $widget-font-size;
+    display: inline;
+    float: left;
+}
+
+
 
 .app-button {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #f9f9f9), color-stop(34%, #dddddd), color-stop(67%, #f2f2f2), color-stop(100%, #f7f7f7));

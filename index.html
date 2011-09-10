@@ -74,7 +74,7 @@
           </div>
 
 
-          <img class="photo-details-image" {{bindAttr src="content.images.standard_resolution.optimizedURL"}}>
+          {{#view App.PinchableView contentBinding="content"}}<img class="photo-details-image" {{bindAttr src="content.images.standard_resolution.optimizedURL"}}>{{/view}}
 
 
           <div class="photo-details-data">
